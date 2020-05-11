@@ -21,7 +21,11 @@ class Home extends Component {
 	componentDidMount() {
 		const that = this;
 
-		fetch(this.url + "/api/forum")
+		fetch(this.url + "/api/forum", {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		})
 			.then(response => response.json())
 			.then(data => {
 				that.setState({

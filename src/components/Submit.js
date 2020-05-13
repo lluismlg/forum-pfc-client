@@ -82,7 +82,8 @@ class Submit extends Component {
 		var content
 		var image
 		var link
-		var date = ""
+		var date
+		var author
 
 		var today = new Date();
 		var yyyy = today.getFullYear();
@@ -93,7 +94,10 @@ class Submit extends Component {
 
 
 		/* TEMPORARY UNTIL I GET LOG IN */
-		var author = "unknown";
+		author = prompt("Please enter your name", "unknown");
+		if (author == null) {
+			author = "unknown";
+		}
 
 		/* GET DATA */
 		if (this.postType === "text") {

@@ -94,9 +94,9 @@ class Submit extends Component {
 
 
 		/* TEMPORARY UNTIL I GET LOG IN */
-		author = prompt("Please enter your name", "unknown");
+		author = prompt("Please enter your name", "anonymous");
 		if (author == null) {
-			author = "unknown";
+			author = "anonymous";
 		}
 
 		/* GET DATA */

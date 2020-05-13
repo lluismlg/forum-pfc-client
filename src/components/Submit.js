@@ -13,7 +13,7 @@ class Submit extends Component {
 
 		this.postType = null;
 
-		this.url = "https://forum-pfc-node.herokuapp.com"
+		this.url = "https://forum-pfc-server.herokuapp.com/"
 	}
 
 	componentDidMount() {
@@ -132,21 +132,21 @@ class Submit extends Component {
 		if (this.postType === "text") {
 			/* TEXT */
 
-			fetch(this.url + "/api/uploadText?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postContent=" + content)
+			fetch(this.url + "api/uploadText?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postContent=" + content)
 			/* RELOAD TO SHOW FEEDBACK */
 			alert("You have posted susccesfully")
 			window.location.reload()
 		}
 		else if (this.postType === "image") {
 			/* IMAGE */
-			fetch(this.url + "/api/uploadText?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postImage=" + image)
+			fetch(this.url + "api/uploadText?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postImage=" + image)
 			/* RELOAD TO SHOW FEEDBACK */
 			alert("You have posted susccesfully")
 			window.location.reload()
 		}
 		else if (this.postType === "link") {
 			/* LINK */
-			fetch(this.url + "/api/uploadText?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postContent=" + link)
+			fetch(this.url + "api/uploadText?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postContent=" + link)
 			/* RELOAD TO SHOW FEEDBACK */
 			alert("You have posted susccesfully")
 			window.location.reload()

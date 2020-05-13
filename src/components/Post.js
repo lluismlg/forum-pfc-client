@@ -18,7 +18,7 @@ class Post extends Component {
 
 		this.voted = "";
 
-		this.url = "https://forum-pfc-node.herokuapp.com"
+		this.url = "https://forum-pfc-server.herokuapp.com/"
 	}
 
 	componentDidMount() {
@@ -31,14 +31,14 @@ class Post extends Component {
 
 		const that = this;
 
-		fetch(this.url + "/api/post?postId=" + postId)
+		fetch(this.url + "api/post?postId=" + postId)
 			.then(response => response.json())
 			.then(data => {
 				that.setState({
 					Post: data
 				})
 			});
-		fetch(this.url + "/api/comments?postId=" + postId)
+		fetch(this.url + "api/comments?postId=" + postId)
 			.then(response => response.json())
 			.then(data => {
 				that.setState({
@@ -56,7 +56,7 @@ class Post extends Component {
 				document.getElementById("Likes").innerHTML = postLikes + 1;
 
 				// LLAMAR A NODE PARA VOTAR (+1)
-				fetch(this.url + "/api/vote?postId=" + postId + "&vote=1")
+				fetch(this.url + "api/vote?postId=" + postId + "&vote=1")
 
 
 			} else {
@@ -66,7 +66,7 @@ class Post extends Component {
 				document.getElementById("Likes").innerHTML = postLikes - 1;
 
 				// LLAMAR A NODE PARA VOTAR (-1)
-				fetch(this.url + "/api/vote?postId=" + postId + "&vote=-1")
+				fetch(this.url + "api/vote?postId=" + postId + "&vote=-1")
 
 			}
 		} else {
@@ -79,7 +79,7 @@ class Post extends Component {
 					this.voted = "";
 
 					// LLAMAR A NODE PARA VOTAR (-1)
-					fetch(this.url + "/api/vote?postId=" + postId + "&vote=-1")
+					fetch(this.url + "api/vote?postId=" + postId + "&vote=-1")
 
 				} else {
 					console.log("You upvoted but now downvote")
@@ -89,7 +89,7 @@ class Post extends Component {
 					document.getElementById("Likes").innerHTML = postLikes - 1;
 
 					// LLAMAR A NODE PARA CAMBIAR EL VOTO (-2)
-					fetch(this.url + "/api/vote?postId=" + postId + "&vote=-2")
+					fetch(this.url + "api/vote?postId=" + postId + "&vote=-2")
 
 				}
 			}
@@ -102,7 +102,7 @@ class Post extends Component {
 					this.voted = "";
 
 					// LLAMAR A NODE PARA VOTAR (+1)
-					fetch(this.url + "/api/vote?postId=" + postId + "&vote=1")
+					fetch(this.url + "api/vote?postId=" + postId + "&vote=1")
 
 				}
 				else {
@@ -113,7 +113,7 @@ class Post extends Component {
 					document.getElementById("Likes").innerHTML = postLikes + 1;
 
 					// LLAMAR A NODE PARA CAMBIAR EL VOTO (+2)
-					fetch(this.url + "/api/vote?postId=" + postId + "&vote=2")
+					fetch(this.url + "api/vote?postId=" + postId + "&vote=2")
 
 				}
 			}
@@ -144,7 +144,7 @@ class Post extends Component {
 		console.log("content " + content)
 
 		/* UPLOAD COMMENT */
-		fetch(this.url + "/api/uploadComment?postId=" + this.state.PostId + "&commentDate=" + date + "&commentAuthor=" + author + "&commentContent=" + content)
+		fetch(this.url + "api/uploadComment?postId=" + this.state.PostId + "&commentDate=" + date + "&commentAuthor=" + author + "&commentContent=" + content)
 
 		/* RELOAD TO SHOW COMMENT */
 		window.location.reload()

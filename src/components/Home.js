@@ -13,7 +13,8 @@ class Home extends Component {
 			Posts: []
 		}
 
-		this.url = "https://forum-pfc-node.herokuapp.com"
+		this.url = "https://forum-pfc-server.herokuapp.com/"
+		// this.proxyurl = "https://cors-anywhere.herokuapp.com/";
 
 		this.probAnuncio = 0;
 	}
@@ -21,9 +22,12 @@ class Home extends Component {
 	componentDidMount() {
 		const that = this;
 
-		fetch(this.url + "/api/forum", {
+		fetch(this.url + "api/forum", {
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json",
+				"Accept": "application/json; odata=verbose",
+				// "origin": this.url,
+				// "X-Requested-With": "XMLHttpRequest"
 			},
 		})
 			.then(response => response.json())
@@ -32,7 +36,8 @@ class Home extends Component {
 					Posts: data
 				})
 				console.log(data)
-			});
+			})
+			;
 
 		document.getElementById("submitInputId").addEventListener('click', this.openSubmit.bind(this, "text"));
 		document.getElementById("submitImgHolderId").addEventListener('click', this.openSubmit.bind(this, "image"));

@@ -29,6 +29,12 @@
 	height: 6vh;
 	z-index: 10;
 	border-bottom: 1px solid black;
+
+	@media (max-width: 992px) {
+		height: auto;
+		min-height: 6vh;
+	}
+
 	.navbar {
 		// height: 6vh;
 		#basic-navbar-nav {

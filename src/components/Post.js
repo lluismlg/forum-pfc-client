@@ -122,7 +122,8 @@ class Post extends Component {
 
 	uploadComment = () => {
 		var content
-		var date = ""
+		var date
+		var author
 
 		/* GET DATE */
 		var today = new Date();
@@ -132,7 +133,10 @@ class Post extends Component {
 		date = yyyy + '-' + mm + '-' + dd;
 
 		/* TEMPORARY UNTIL I GET LOG IN */
-		var author = "unknown";
+		author = prompt("Please enter your name", "unknown");
+		if (author == null) {
+			author = "unknown";
+		}
 
 		/* GET DATA */
 		content = document.getElementById("CommentContent").value;

@@ -143,14 +143,14 @@ class Submit extends Component {
 		}
 		else if (this.postType === "image") {
 			/* IMAGE */
-			fetch(this.url + "api/uploadText?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postImage=" + image)
+			fetch(this.url + "api/uploadImage?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postImage=" + image)
 			/* RELOAD TO SHOW FEEDBACK */
 			alert("You have posted susccesfully")
 			window.location.reload()
 		}
 		else if (this.postType === "link") {
 			/* LINK */
-			fetch(this.url + "api/uploadText?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postContent=" + link)
+			fetch(this.url + "api/uploadLink?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postContent=" + link)
 			/* RELOAD TO SHOW FEEDBACK */
 			alert("You have posted susccesfully")
 			window.location.reload()

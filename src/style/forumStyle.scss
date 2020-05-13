@@ -327,6 +327,11 @@
 	border-radius: 2em;
 	background-color: #f8f9fa;
 
+	@media (max-width: 992px) {
+		margin: 5vh 2vw;
+		width: 96vw;
+	}
+
 	.submitCard {
 		border-radius: 2em;
 

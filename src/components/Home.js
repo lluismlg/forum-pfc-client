@@ -14,7 +14,6 @@ class Home extends Component {
 		}
 
 		this.url = "https://forum-pfc-server.herokuapp.com/"
-		// this.proxyurl = "https://cors-anywhere.herokuapp.com/";
 
 		this.probAnuncio = 0;
 	}
@@ -26,8 +25,6 @@ class Home extends Component {
 			headers: {
 				"Content-Type": "application/json",
 				"Accept": "application/json; odata=verbose",
-				// "origin": this.url,
-				// "X-Requested-With": "XMLHttpRequest"
 			},
 		})
 			.then(response => response.json())
@@ -36,8 +33,7 @@ class Home extends Component {
 					Posts: data
 				})
 				console.log(data)
-			})
-			;
+			});
 
 		document.getElementById("submitInputId").addEventListener('click', this.openSubmit.bind(this, "text"));
 		document.getElementById("submitImgHolderId").addEventListener('click', this.openSubmit.bind(this, "image"));

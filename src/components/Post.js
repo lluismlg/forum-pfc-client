@@ -79,7 +79,7 @@ class Post extends Component {
 					this.voted = "";
 
 					// LLAMAR A NODE PARA VOTAR (-1)
-					fetch(this.ip + "/api/vote?postId=" + postId + "&vote=-1")
+					fetch(this.url + "/api/vote?postId=" + postId + "&vote=-1")
 
 				} else {
 					console.log("You upvoted but now downvote")
@@ -89,7 +89,7 @@ class Post extends Component {
 					document.getElementById("Likes").innerHTML = postLikes - 1;
 
 					// LLAMAR A NODE PARA CAMBIAR EL VOTO (-2)
-					fetch(this.ip + "/api/vote?postId=" + postId + "&vote=-2")
+					fetch(this.url + "/api/vote?postId=" + postId + "&vote=-2")
 
 				}
 			}

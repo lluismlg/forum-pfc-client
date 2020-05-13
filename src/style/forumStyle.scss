@@ -26,7 +26,7 @@
 
 /* HEADER */
 .myNavbar {
-	/* height: 6vh; */
+	height: 6vh;
 	z-index: 10;
 	border-bottom: 1px solid black;
 	.navbar {
@@ -41,6 +41,8 @@
 
 /* HOME */
 .home {
+	min-height: 74vh;
+
 	.homeSubmitCard {
 		margin: 5vh 15vw;
 		margin-bottom: 0vh;

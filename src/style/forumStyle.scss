@@ -116,15 +116,15 @@
 				.author {
 					float: right;
 					font-size: 0.9em;
-					font-weight: 400;
+					font-weight: 500;
 				}
 				@media (max-width: 767px) {
 					h5 {
+						max-width: 72vw;
 						font-size: 1.25em;
 					}
 					.author {
-						font-size: 0.9em;
-						font-weight: 400;
+						font-size: 0.85em;
 					}
 				}
 			}

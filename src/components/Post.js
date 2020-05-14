@@ -134,12 +134,18 @@ class Post extends Component {
 
 		/* TEMPORARY UNTIL I GET LOG IN */
 		author = prompt("Please enter your name", "unknown");
-		if (author == null) {
-			author = "unknown";
+		if (author === null) {
+			return;
+		} else if (author === "") {
+			author = "anonymous";
 		}
 
 		/* GET DATA */
 		content = document.getElementById("CommentContent").value;
+		if (content === "") {
+			alert("Please wrtie something");
+			return;
+		}
 
 		/* CHECK DATA */
 		console.log(this.state.PostId)

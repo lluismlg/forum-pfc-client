@@ -30,6 +30,11 @@ class FAQ extends Component {
 					"categoria": "General",
 					"pregunta": "Im having problems working my way around the web, can I get any help?",
 					"respuesta": "I'd recommend checking out the sitemap of our website, you can acces it from the footer at any page.If you are still having problems please send us an email from the contact page once we implement it"
+				},
+				{
+					"categoria": "General",
+					"pregunta": "How do you make money?",
+					"respuesta": "We are planning on adding a feature which will allow as to put ads in the feed"
 				}
 			]
 		}

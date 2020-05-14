@@ -6,19 +6,19 @@
 /* SCROLLBAR */
 /* width */
 ::-webkit-scrollbar {
-	width: 10px;
+	width: 1vw;
+	@media (max-width: 767px) {
+		width: 1.5vw;
+	}
 }
-
 /* Track */
 ::-webkit-scrollbar-track {
 	background: #f1f1f1;
 }
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
 	background: #888;
 }
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
@@ -26,14 +26,11 @@
 
 /* HEADER */
 .myNavbar {
-	height: 6vh;
+	height: auto;
+	min-height: 6vh;
+
 	z-index: 10;
 	border-bottom: 1px solid black;
-
-	@media (max-width: 992px) {
-		height: auto;
-		min-height: 6vh;
-	}
 
 	.navbar {
 		// height: 6vh;
@@ -47,13 +44,19 @@
 
 /* HOME */
 .home {
+	margin: 0 15vw;
 	min-height: 74vh;
+	width: 70vw;
+	@media (max-width: 767px) {
+		margin: 0 1.25vw;
+		width: 96vw;
+	}
 
 	.homeSubmitCard {
-		margin: 5vh 15vw;
-		margin-bottom: 0vh;
+		margin: 2.5vh 0vw;
 		height: 10vh;
-		width: 70vw;
+		width: 100%;
+		min-width: max-content;
 		text-align: justify;
 		border: 1px solid #666666;
 		background-color: #f8f9fa;
@@ -91,25 +94,14 @@
 				}
 			}
 		}
-		@media (max-width: 992px) {
-			margin: 2.5vh 0;
-			margin-bottom: 0vh;
-			width: 100vw;
-		}
 	}
 	.homeCard {
-		margin: 2.5vh 15vw;
-		// margin-bottom: 0;
-		width: 70vw;
+		margin: 2.5vh 0vw;
+		width: 100%;
+		min-width: max-content;
 		text-align: justify;
 		border: 1px solid #666666;
 		background-color: #f8f9fa;
-
-		@media (max-width: 992px) {
-			margin: 2.5vh 0;
-			// margin-bottom: 0vh;
-			width: 100vw;
-		}
 
 		.card-body {
 			padding-bottom: 0;
@@ -126,7 +118,7 @@
 					font-size: 0.9em;
 					font-weight: 400;
 				}
-				@media (max-width: 992px) {
+				@media (max-width: 767px) {
 					h5 {
 						font-size: 1.25em;
 					}
@@ -143,7 +135,7 @@
 				margin-bottom: 1vh;
 				margin-right: 4vw;
 
-				@media (max-width: 992px) {
+				@media (max-width: 767px) {
 					width: auto;
 					margin-right: 0;
 				}
@@ -178,12 +170,13 @@
 	margin: 0 15vw;
 	min-height: 74vh;
 	width: 70vw;
-	@media (max-width: 992px) {
-		margin: 0 1vw;
-		width: 98vw;
+	@media (max-width: 767px) {
+		margin: 0 1.25vw;
+		width: 96vw;
 	}
 	.postCard {
 		margin-top: 5vh;
+		min-width: max-content;
 		text-align: justify;
 		border: 1px solid transparent;
 		border-bottom: 1px solid #666666;
@@ -223,9 +216,9 @@
 					font-size: 100%;
 					font-weight: 600;
 					text-align: center;
-					@media (max-width: 992px) {
+					@media (max-width: 767px) {
 						margin: 5px 0;
-						width: min-content;
+						// width: min-content;
 					}
 				}
 				.arrow {
@@ -275,6 +268,7 @@
 			border: 1px solid grey;
 		}
 		.commentInputCard {
+			min-width: max-content;
 			border: 1px solid grey;
 			input[type="text"] {
 				width: 100%;
@@ -291,17 +285,18 @@
 				float: right;
 				// margin-right: 5%;
 				margin-top: 1rem;
-				padding: 0.25em;
-				height: 5vh;
-				background-color: #f8f9fa;
+				padding: 1.5vh;
 				border: 1px solid grey;
-				border-radius: 0.5em;
-				cursor: pointer;
+				border-radius: 0.75em;
+				font-weight: 500;
+				color: white;
+				background-color: orangered;
 				outline: none;
 			}
 		}
 		.commentCard {
 			margin: 2vh 0;
+			min-width: max-content;
 			border: 1px solid grey;
 			.card-title {
 				.commentAuthor {
@@ -317,7 +312,6 @@
 }
 
 /* SUBMIT */
-
 .submit {
 	margin: 5vh 15vw;
 	min-height: 69vh;
@@ -327,7 +321,7 @@
 	border-radius: 2em;
 	background-color: #f8f9fa;
 
-	@media (max-width: 992px) {
+	@media (max-width: 767px) {
 		margin: 5vh 2vw;
 		width: 96vw;
 	}
@@ -523,10 +517,13 @@
 
 /* FAQ */
 .faq {
-	min-height: 80vh;
-	width: 80vw;
-	margin: 0 10vw;
-	text-align: justify;
+	margin: 0 15vw;
+	min-height: 74vh;
+	width: 70vw;
+	@media (max-width: 767px) {
+		margin: 0 1.25vw;
+		width: 96vw;
+	}
 	.titleFAQ {
 		margin-top: 3vh;
 		width: min-content;
@@ -591,7 +588,10 @@
 
 /* FOOTER */
 .site-footer {
-	height: 15vh;
+	display: flex;
+
+	height: auto;
+	min-height: 15vh;
 	width: 100%;
 
 	background-color: #26272b;
@@ -601,12 +601,8 @@
 	text-align: center;
 	z-index: 5;
 
-	@media (max-width: 992px) {
-		height: auto;
-	}
-
-	.row {
-		margin: 0;
+	@media (max-width: 767px) {
+		flex-direction: column;
 	}
 
 	h6 {
@@ -625,6 +621,7 @@
 	}
 
 	.footer-links {
+		flex-grow: 6;
 		padding-left: 0;
 		list-style: none;
 
@@ -643,10 +640,12 @@
 	}
 
 	.social-icons {
+		flex-grow: 6;
 		display: flex;
 		justify-content: center;
 		height: 7.5vh;
 		align-items: center;
+
 		a {
 			width: 40px;
 			height: 40px;

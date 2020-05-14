@@ -31,20 +31,39 @@ class Post extends Component {
 
 		const that = this;
 
-		fetch(this.url + "api/post?postId=" + postId)
+		fetch(this.url + "api/post?postId=" + postId, {
+			headers: {
+				"Content-Type": "application/json",
+				"Accept": "application/json; odata=verbose",
+			},
+		})
 			.then(response => response.json())
 			.then(data => {
 				that.setState({
 					Post: data
 				})
-			});
-		fetch(this.url + "api/comments?postId=" + postId)
+			})
+			.catch((error) => {
+				console.log(error)
+				window.location = "/";
+			})
+
+		fetch(this.url + "api/comments?postId=" + postId, {
+			headers: {
+				"Content-Type": "application/json",
+				"Accept": "application/json; odata=verbose",
+			},
+		})
 			.then(response => response.json())
 			.then(data => {
 				that.setState({
 					Comments: data
 				})
-			});
+			})
+			.catch((error) => {
+				console.log(error)
+				window.location = "/";
+			})
 	}
 
 	votePost = (postId, postLikes, vote) => {

@@ -32,12 +32,23 @@ class Home extends Component {
 				that.setState({
 					Posts: data
 				})
-				console.log(data)
 			})
 			.catch((error) => {
-				alert("There has been an error with the database")
 				console.log(error)
-			  });
+				that.setState({
+					Posts:
+						[{
+							"postAuthor": "RoxaS",
+							"postContent": "Please wait the problem is probably related to the database being unable to reposnd due too many requests. It should work in a few minutes. Sorry for the inconvenience",
+							"postDate": "",
+							"postId": 0,
+							"postImg": null,
+							"postTitle": "There has been an error",
+							"postTopic": "Error",
+							"postType": "text"
+						}]
+				})
+			});
 
 		document.getElementById("submitInputId").addEventListener('click', this.openSubmit.bind(this, "text"));
 		document.getElementById("submitImgHolderId").addEventListener('click', this.openSubmit.bind(this, "image"));

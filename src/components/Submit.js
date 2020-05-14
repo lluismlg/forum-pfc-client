@@ -13,7 +13,7 @@ class Submit extends Component {
 
 		this.postType = null;
 
-		this.url = "https://forum-pfc-server.herokuapp.com/"
+		this.url = "https://forum-pfc-server.herokuapp.com8/"
 	}
 
 	componentDidMount() {
@@ -137,6 +137,10 @@ class Submit extends Component {
 			/* TEXT */
 
 			fetch(this.url + "api/uploadText?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postContent=" + content)
+			.catch((error) => {
+				console.log(error)
+				window.location = "/";
+			})
 			/* RELOAD TO SHOW FEEDBACK */
 			alert("You have posted susccesfully")
 			window.location.reload()
@@ -144,6 +148,10 @@ class Submit extends Component {
 		else if (this.postType === "image") {
 			/* IMAGE */
 			fetch(this.url + "api/uploadImage?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postImage=" + image)
+			.catch((error) => {
+				console.log(error)
+				window.location = "/";
+			})
 			/* RELOAD TO SHOW FEEDBACK */
 			alert("You have posted susccesfully")
 			window.location.reload()
@@ -151,6 +159,10 @@ class Submit extends Component {
 		else if (this.postType === "link") {
 			/* LINK */
 			fetch(this.url + "api/uploadLink?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postContent=" + link)
+			.catch((error) => {
+				console.log(error)
+				window.location = "/";
+			})
 			/* RELOAD TO SHOW FEEDBACK */
 			alert("You have posted susccesfully")
 			window.location.reload()

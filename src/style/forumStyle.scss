@@ -137,6 +137,7 @@
 
 				@media (max-width: 767px) {
 					width: auto;
+					max-width: 85vw;
 					margin-right: 0;
 				}
 			}
@@ -199,6 +200,7 @@
 			.card-text {
 				display: inline-block;
 				width: 90%;
+				max-width: 85vw;
 				margin-right: 5%;
 			}
 

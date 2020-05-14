@@ -13,7 +13,7 @@ class Submit extends Component {
 
 		this.postType = null;
 
-		this.url = "https://forum-pfc-server.herokuapp.com8/"
+		this.url = "https://forum-pfc-server.herokuapp.com/"
 	}
 
 	componentDidMount() {

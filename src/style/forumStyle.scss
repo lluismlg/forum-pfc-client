@@ -26,14 +26,17 @@
 
 /* HEADER */
 .myNavbar {
-	height: auto;
-	min-height: 6vh;
-
+	height: 6vh;
 	z-index: 10;
 	border-bottom: 1px solid black;
 
+	@media (max-width: 767px) {
+		height: auto;
+		min-height: 6vh;
+	}
+
 	.navbar {
-		// height: 6vh;
+		height: 100%;
 		#basic-navbar-nav {
 			a {
 				font-size: 1.1em;
@@ -45,7 +48,7 @@
 /* HOME */
 .home {
 	margin: 0 15vw;
-	min-height: 74vh;
+	min-height: 76.5vh;
 	width: 70vw;
 	@media (max-width: 767px) {
 		margin: 0 1.25vw;

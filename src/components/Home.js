@@ -33,7 +33,11 @@ class Home extends Component {
 					Posts: data
 				})
 				console.log(data)
-			});
+			})
+			.catch((error) => {
+				alert("There has been an error with the database")
+				console.log(error)
+			  });
 
 		document.getElementById("submitInputId").addEventListener('click', this.openSubmit.bind(this, "text"));
 		document.getElementById("submitImgHolderId").addEventListener('click', this.openSubmit.bind(this, "image"));

@@ -124,11 +124,11 @@ class Submit extends Component {
 		/* CHECK DATA */
 
 		console.log(date)
-		console.log("author " + author)
-		console.log("title " + title)
-		console.log("image " + image)
-		console.log("content " + content)
-		console.log("link " + link)
+		console.log("author = " + author)
+		console.log("title = " + title)
+		console.log("image = " + image)
+		console.log("content = " + content)
+		console.log("link = " + link)
 		console.log(this.postType)
 
 		/* UPLOAD POSTS */
@@ -138,6 +138,7 @@ class Submit extends Component {
 
 			fetch(this.url + "api/uploadText?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postContent=" + content)
 			.catch((error) => {
+				alert("error")
 				console.log(error)
 				window.location = "/";
 			})
@@ -147,8 +148,10 @@ class Submit extends Component {
 		}
 		else if (this.postType === "image") {
 			/* IMAGE */
+			console.log(this.url + "api/uploadImage?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postImage=" + image)
 			fetch(this.url + "api/uploadImage?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postImage=" + image)
 			.catch((error) => {
+				alert("error")
 				console.log(error)
 				window.location = "/";
 			})
@@ -160,6 +163,7 @@ class Submit extends Component {
 			/* LINK */
 			fetch(this.url + "api/uploadLink?postDate=" + date + "&postType=" + this.postType + "&postAuthor=" + author + "&postTitle=" + title + "&postContent=" + link)
 			.catch((error) => {
+				alert("error")
 				console.log(error)
 				window.location = "/";
 			})

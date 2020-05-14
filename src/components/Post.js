@@ -210,7 +210,7 @@ class Post extends Component {
 										</div>
 									</div>
 								</Card.Body>
-								<Card.Img variant="top" src={post.postImg} className="postCardImg" />
+								<Card.Img className="postCardImg" variant="top" src={post.postImage}  />
 								<Card.Footer><p className="footerTopic">{post.postTopic}</p><p className="footerDate">{post.postDate}</p></Card.Footer>
 							</Card>
 						)

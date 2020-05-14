@@ -42,7 +42,7 @@ class Home extends Component {
 							"postContent": "Please wait the problem is probably related to the database being unable to reposnd due too many requests. It should work in a few minutes. Sorry for the inconvenience",
 							"postDate": "",
 							"postId": 0,
-							"postImg": null,
+							"postImage": null,
 							"postTitle": "There has been an error",
 							"postTopic": "Error",
 							"postType": "text"
@@ -98,7 +98,7 @@ class Home extends Component {
 											<Card.Title onClick={this.openPost.bind(this, post.postId)}><h5>{post.postTitle}</h5><p className="author">{post.postAuthor}</p></Card.Title>
 										</Card.Body>
 										<div className="homeCardImgHolder">
-											<Card.Img variant="top" src={post.postImg} className="homeCardImg" />
+											<Card.Img variant="top" src={post.postImage} className="homeCardImg" />
 										</div>
 										<Card.Footer><p className="footerTopic">{post.postTopic}</p><p className="footerDate">{post.postDate}</p></Card.Footer>
 									</Card>

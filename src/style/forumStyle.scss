@@ -51,14 +51,14 @@
 	min-height: 76.5vh;
 	width: 70vw;
 	@media (max-width: 767px) {
-		margin: 0 1.25vw;
+		margin: 0 2vw;
 		width: 96vw;
 	}
 
 	.homeSubmitCard {
 		margin: 2.5vh 0vw;
 		height: 10vh;
-		width: 100%;
+		width: inherit;
 		min-width: max-content;
 		text-align: justify;
 		border: 1px solid #666666;
@@ -67,6 +67,7 @@
 		.card-body {
 			display: flex;
 			padding: 1em;
+			width: inherit;
 			input {
 				flex-grow: 11;
 				margin: 0.25em;
@@ -94,20 +95,26 @@
 
 				img {
 					height: 100%;
+					width: auto;
 				}
 			}
 		}
 	}
 	.homeCard {
 		margin: 2.5vh 0vw;
-		width: 100%;
+		width: 70vw;
 		min-width: max-content;
 		text-align: justify;
 		border: 1px solid #666666;
 		background-color: #f8f9fa;
 
+		@media (max-width: 767px) {
+			width: auto;
+		}
+
 		.card-body {
 			padding-bottom: 0;
+			width: inherit;
 
 			.card-title {
 				cursor: pointer;
@@ -148,11 +155,16 @@
 
 		.homeCardImgHolder {
 			overflow: hidden;
+			margin-bottom: 1vh;
 			max-height: 30vh;
+			width: inherit;
 			img {
-				margin-bottom: 1vh;
-				align-self: center;
-				background-color: #f0f2f4;
+				margin: 0 1vw;
+				width: 68vw;
+				@media (max-width: 767px) {
+					margin: 0 2vw;
+					width: 92vw;
+				}
 			}
 		}
 
@@ -241,16 +253,25 @@
 					}
 				}
 			}
+		}
 
-			img {
-				padding: 0 5vw;
+		/* CARD IMAGE */
+		.postCardImg {
+			margin: 0 1vw;
+			margin-bottom: 1vh;
+			width: 68vw;
+
+			margin: 0 1vw;
+			margin-bottom: 1vh;
+			width: 68vw;
+			@media (max-width: 767px) {
+				margin: 0 2vw;
 				margin-bottom: 1vh;
-				max-height: fit-content;
-				max-width: 100%;
-				align-self: center;
-				// background-color: #f0f2f4;
+				width: 92vw;
 			}
 		}
+
+		/* CARD FOOTER */
 		.card-footer {
 			.footerTopic {
 				display: inline-block;

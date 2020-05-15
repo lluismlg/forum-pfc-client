@@ -39,9 +39,29 @@ class Post extends Component {
 		})
 			.then(response => response.json())
 			.then(data => {
-				that.setState({
-					Post: data
-				})
+				if (Object.keys(data).length === 0) {
+					alert("We couldn't find the post you are looking for. Sorry")
+					window.location = "/";
+
+					// that.setState({
+					// 	Post: [{
+					// 		"postAuthor": "RoxaS",
+					// 		"postContent": "",
+					// 		"postDate": "",
+					// 		"postId": 0,
+					// 		"postLikes": 0,
+					// 		"postImage": null,
+					// 		"postTitle": "We couldn't find the post you are looking for, maybe it got deleted.",
+					// 		"postTopic": "Error",
+					// 		"postType": "text"
+					// 	}]
+					// })
+				} else {
+					that.setState({
+						Post: data
+					})
+				}
+
 			})
 			.catch((error) => {
 				console.log(error)
@@ -152,7 +172,7 @@ class Post extends Component {
 		date = yyyy + '-' + mm + '-' + dd;
 
 		/* TEMPORARY UNTIL I GET LOG IN */
-		author = prompt("Please enter your name", "unknown");
+		author = prompt("Please enter your name", "anonymous");
 		if (author === null) {
 			return;
 		} else if (author === "") {
@@ -210,7 +230,7 @@ class Post extends Component {
 										</div>
 									</div>
 								</Card.Body>
-								<Card.Img className="postCardImg" variant="top" src={post.postImage}  />
+								<Card.Img className="postCardImg" variant="top" src={post.postImage} />
 								<Card.Footer><p className="footerTopic">{post.postTopic}</p><p className="footerDate">{post.postDate}</p></Card.Footer>
 							</Card>
 						)

@@ -39,7 +39,7 @@ class Home extends Component {
 					Posts:
 						[{
 							"postAuthor": "RoxaS",
-							"postContent": "Please wait the problem is probably related to the database being unable to reposnd due too many requests. It should work in a few minutes. Sorry for the inconvenience",
+							"postContent": "Please wait the problem is probably related to the database being unable to respond due to too many requests. It should work in a few minutes. Sorry for the inconvenience",
 							"postDate": "",
 							"postId": 0,
 							"postImage": null,

@@ -5,6 +5,7 @@ import NavBar  from './NavBar';
 
 import Home from './Home';
 import Post from './Post.js';
+import Search from './Search.js';
 import FAQ from './FAQ.js';
 import Submit from './Submit.js';
 import AboutUs from './AboutUs';
@@ -25,6 +26,7 @@ class Router extends Component {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/post" component={Post} />
+					<Route exact path="/search" component={Search} />
 					<Route exact path="/faq" component={FAQ} />
 					<Route exact path="/submit" component={Submit} />
 					<Route exact path="/about_us" component={AboutUs} />

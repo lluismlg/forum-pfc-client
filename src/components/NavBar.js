@@ -4,6 +4,12 @@ import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'
 
 class NavBar extends Component {
 
+	openSearch = () => {
+		var searchValue = document.getElementById("searchTitle").value
+		console.log(window.location.hostname + "/Search?searchTitle=" + searchValue)
+		window.location = "/Search?searchTitle=" + searchValue;
+	}
+
 	render() {
 		return (
 			<div className="myNavbar">
@@ -24,8 +30,8 @@ class NavBar extends Component {
 							</NavDropdown> */}
 						</Nav>
 						<Form inline>
-							<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-							<Button variant="outline-primary">Search</Button>
+							<FormControl type="text" placeholder="Search" className="mr-sm-2" id="searchTitle" />
+							<Button onClick={this.openSearch.bind(this)} variant="outline-primary">Search</Button>
 						</Form>
 					</Navbar.Collapse>
 				</Navbar>
